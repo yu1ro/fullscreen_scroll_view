@@ -1,0 +1,42 @@
+name: flutter analyze
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  flutter_analyze:
+
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 10
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: Read Flutter version and channel from .tool-version
+        id: flutter_info
+        run: |
+          flutter_info=$(grep 'flutter' .tool-versions)
+          echo "::set-output name=version::$(echo ${flutter_info} | sed -r 's/^flutter ([a-z0-9\.\+\-]+)\-(stable|beta|dev)$/\1/')"
+          echo "::set-output name=channel::$(echo ${flutter_info} | sed -r 's/^flutter ([a-z0-9\.\+\-]+)\-(stable|beta|dev)$/\2/')"
+
+      - name: flutter cache
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ steps.flutter_info.outputs.version }}
+          channel: ${{ steps.flutter_info.outputs.channel }}
+          cache: true
+          cache-key: flutter-${{ steps.flutter_info.outputs.version }}-${{ steps.flutter_info.outputs.channel }}
+          cache-path: ${{ runner.tool_cache }}/flutter
+
+      - run: flutter --version
+
+      - run: flutter pub get
+
+      - run: flutter test
+      - run: flutter analyze
