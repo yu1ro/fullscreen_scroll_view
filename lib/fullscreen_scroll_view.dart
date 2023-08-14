@@ -2,7 +2,6 @@ library fullscreen_scroll_view;
 
 import 'package:flutter/widgets.dart';
 
-/// A Calculator.
 class FullScreenScrollView extends StatelessWidget {
   const FullScreenScrollView({
     Key? key,
