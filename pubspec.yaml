@@ -1,6 +1,6 @@
 name: fullscreen_scroll_view
 description: This is SingleChildScrollView but Expanded and Flex are available
-version: 0.0.1
+version: 1.0.0
 homepage: https://github.com/yu1ro/fullscreen_scroll_view
 
 environment:
