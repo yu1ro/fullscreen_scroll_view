@@ -1,39 +1,32 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# FullScreenScrollView
+SingleChildScrollViewにExpandedを入れたくなったことはありませんか？
+私はあります。  
+例えば、常に一番下にボタンを配置し、上の部分が多くなったり、画面が小さくなったら余白部分が小さくなり、  
+余白が足りなくなったらスクロールしてほしい。  
+そんな場合に使えます。
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+<p>
+<img src="/assets/demo.gif?raw=true&v1" width="320" />
+</p>
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+## 利用方法
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+動作するコードは/exampleにございます。  
+簡単にはこんなコードで使います。
 
 ```dart
-const like = 'sample';
+FullScreenScrollView(
+  child: Column(
+    children: <Widget>[
+      const Text('some widget'),
+      const Expanded(child: SizedBox.shrink()),
+      ElevatedButton(
+        onPressed: _incrementCounter,
+        child: const Row(
+          children: [Icon(Icons.add), Text('Add widget')],
+        ),
+      ),
+    ],
+  ),
+)
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
