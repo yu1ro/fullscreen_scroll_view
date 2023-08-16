@@ -6,7 +6,7 @@ SingleChildScrollViewにExpandedを入れたくなったことはありません
 そんな場合に使えます。
 
 <p>
-<img src="/assets/demo.gif?raw=true&v1" width="320" />
+<img src="https://raw.githubusercontent.com/yu1ro/fullscreen_scroll_view/master/assets/demo.gif" width="320" />
 </p>
 
 ## 利用方法
