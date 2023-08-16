@@ -5,7 +5,7 @@ For example, you may want to always place a button at the bottom of the screen,
 If you want the entire screen to scroll when there is not enough margin, you can use this package.  
 
 <p>
-<img src="/assets/demo.gif?raw=true&v1" width="320" />
+<img src="https://raw.githubusercontent.com/yu1ro/fullscreen_scroll_view/master/repo_files/assets/demo.gif" width="320" />
 </p>
 
 ## Usage
