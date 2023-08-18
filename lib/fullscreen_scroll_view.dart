@@ -11,12 +11,18 @@ class FullScreenScrollView extends StatelessWidget {
     this.padding,
   }) : super(key: key);
 
+  /// The widget that scrolls.
+  ///
+  /// {@macro flutter.widgets.ProxyWidget.child}
   final Widget? child;
 
+  /// see [SingleChildScrollView.reverse]
   final bool reverse;
 
+  /// see [SingleChildScrollView.physics]
   final ScrollPhysics? physics;
 
+  /// see [SingleChildScrollView.padding]
   final EdgeInsetsGeometry? padding;
 
   @override
