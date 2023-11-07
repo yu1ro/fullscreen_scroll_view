@@ -4,12 +4,12 @@ import 'package:flutter/widgets.dart';
 
 class FullScreenScrollView extends StatelessWidget {
   const FullScreenScrollView({
-    Key? key,
+    super.key,
     this.child,
     this.reverse = false,
     this.physics,
     this.padding,
-  }) : super(key: key);
+  });
 
   /// The widget that scrolls.
   ///
