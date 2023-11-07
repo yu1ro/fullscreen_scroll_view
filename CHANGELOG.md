@@ -1,3 +1,7 @@
+## 1.0.2
+* Expand sdk version
+* update dev_dependency
+
 ## 1.0.1
 
 * Add dart doc
